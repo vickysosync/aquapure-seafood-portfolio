@@ -447,7 +447,7 @@ export function GallerySection({ full }: { full?: boolean }) {
 }
 
 /* ---------- Contact & Enquiry ---------- */
-const empty = { name: "", company: "", email: "", phone: "", country: "India", product: "", quantity: "", type: ENQUIRY_TYPES[0], message: "" };
+const empty = { name: "", company: "", email: "", phone: "", country: "India", product: "", quantity: "", type: ENQUIRY_TYPES[0] as string, message: "" };
 type Form = typeof empty;
 
 export function validateEnquiry(f: Form) {
@@ -539,7 +539,7 @@ export function EnquiryForm({ product = "" }: { product?: string }) {
   );
 }
 
-export function ContactSection({ product }: { product?: string }) {
+export function ContactSection({ product = "" }: { product?: string }) {
   const s = useStore().data.settings;
   const mapQ = encodeURIComponent("Mohan Nagar, Nagpur, Maharashtra 440001");
   const cards = [
